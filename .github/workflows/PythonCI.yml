@@ -1,0 +1,31 @@
+name: PythonCI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.9
+      - name: install packages
+        run: make p_install
+      - name: format code
+        run: make p_format
+      - name: lint
+        run: make p_lint
+      - name: test
+        run: make p_test
+      - name: run
+        run: make p_run
