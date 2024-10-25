@@ -1,31 +1,45 @@
 # jf361_ids706_mp8
+[![RustCI](https://github.com/siyiia/jf361_ids706_mp8/actions/workflows/RustCI.yml/badge.svg)](https://github.com/siyiia/jf361_ids706_mp8/actions/workflows/RustCI.yml)
+[![PythonCI](https://github.com/siyiia/jf361_ids706_mp8/actions/workflows/PythonCI.yml/badge.svg)](https://github.com/siyiia/jf361_ids706_mp8/actions/workflows/PythonCI.yml)
 
  ## Project Introduction
-This project is to create pandas descriptive statistics script.
+This project is to rewrite a Python Script in Rust.
 
 ## Project Requirments
-- Python script using Pandas for descriptive statistics
-- Read a dataset (CSV or Excel)
-- Generate summary statistics (mean, median, standard deviation)
-- Create at least one data visualization
+- Take an existing Python script for data processing
+- Rewrite it in Rust
+- Highlight improvements in speed and resource usage
+
+## Project Description
+This project:
+- Calculated the mean and standard deviation of dataset columns in Python and Rust.
+- Measured the execution time and memory usage for both implementations.
 
 ## Project Setup
-1. **Read a CSV file** The first step is to read the dataset using Pandas. This allows you to load the data into a DataFrame for further analysis:
+To run the project:
+1. **Python Implementation**: Run the Python script using:
     ```
-   import pandas as pd
-    df = pd.read_csv('data/dataset.csv')
+   python main.py
    ```
-2. **Analyze Summary Statistics**: Pandas provides a convenient method `df.describe()` to generate summary statistics such as count, mean, standard deviation (std), minimum, and maximum for each numeric column in the dataset.
-   ```angular2html
-    analysed_data = df.describe()
-    print(analysed_data)
+2. **Rust Implementation**: Run the Rust program using:
     ```
-3. **Visualizing the Data**: Pandas provides a convenient method `df.hist()` to help better understand the data distribution. Histograms are generated for each numeric column.
-    ```
-   df.hist(bins=10, edgecolor='black')
+   cargo run
    ```
-4. **Generate a Report**: The summary statistics and visualizations are compiled into a Markdown report. The detailed code of `create_summary_report()` method is in the `src/main.py` file.
 
 
-## Project Output
-The markdown summary report is under the `output` dictionary with name `summary_report.md`
+## Performance Comparison Report 
+Below are the performance results for both implementations.
+### Rust Performance
+<p>
+  <img width="600" src="screenshots/rust.png" />
+</p>
+
+### Python Performance
+<p>
+  <img width="600" src="screenshots/python.png" />
+</p>
+
+### Analysis
+Based on the results shown:
+- Speed: Rust was faster in execution compared to Python.
+- Memory Usage: Rust used significantly less memory than Python, which means that Rust’s efficiency in memory management and performance.
